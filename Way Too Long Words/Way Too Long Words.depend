@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1717764021 source:c:\users\talel\desktop\codeforces\way too long words\main.cpp
+	<iostream>
+	<string>
+	<sstream>
+
