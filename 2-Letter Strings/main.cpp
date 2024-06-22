@@ -6,23 +6,27 @@ int main()
 {
   int t;
   cin>>t;
+
   while(t--){
     int n;
-    cin>>n;
-    string ch;
-    vector<string> arr(n);
-    for(int i=0;i<n;i++){
-        cin >> arr[i];
+    cin>> n;
+
+    vector<string>a(n);
+
+    map<string,int> mp;
+    map<char,int> first , second ;
+
+    long long ans =  0 ;
+    for(int i  = 0 ; i<n;i++)
+    {
+       cin>>a[i] ;
+
+       mp[a[i]]++;
+       first[a[i][0]]++;
+       second[a[i][1]]++;
+       ans+=   (first[a[i][0]] +  second[a[i][1]])-2*(mp[a[i]]);
+
     }
-    int nb=0;
-    for(int i=0;i<arr.size();i++){
-          string test=arr[i];
-          for(int j=i+1;j<arr.size();j++){
-                if( (test[0]==arr[j][0] && test[1]!=arr[j][1]) ||  (test[1]==arr[j][1] && test[0]!=arr[j][0])){
-                    nb++;
-                }
-        }
-    }
-    cout<<nb<<endl;
+    cout<<ans<<endl;
   }
 }
