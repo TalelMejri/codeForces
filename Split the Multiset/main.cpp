@@ -9,15 +9,13 @@ int main()
   while(t--){
     int n,k;
     cin>>n>>k;
-    if(n==1){
-        cout<<"0"<<endl;
-    }else{
-      int ans=1;
-      while(n>0){
-        n-=k;
+
+      int ans=0;
+      while(n>1){
+        n-=(k-1);
         ans++;
       }
       cout<<ans<<endl;
     }
-  }
+
 }
