@@ -7,46 +7,22 @@ int main()
     int t;
     cin>>t;
     while(t--){
-
         int n;
         cin>>n;
-        vector<int> tab(n);
-
+        set<int>s;
+        int trouve=true;
         for(int i=0;i<n;i++){
-            cin>>tab[i];
+            int x;
+            cin >> x;
+            s.insert(x);
+            if (i!=0) {
+                if (s.find(x-1)==s.end() && s.find(x+1)==s.end()) trouve=false;
+            }
         }
-
-        if(n>1){
-
-            int trouve=false;
-            for(int i=1;i<n;i++){
-                int test=false;
-                auto it = find(tab.begin(), tab.begin() + i, tab[i] + 1);
-                if (it != tab.begin() + i) {
-                    test = true;
-                } else {
-                    it = find(tab.begin(), tab.begin() + i, tab[i] - 1);
-                    if (it != tab.begin() + i) {
-                        test = true;
-                    }
-                }
-                if(test){
-                    trouve=true;
-                }else{
-                    trouve=false;
-                    break;
-                }
-            }
-
-            if(trouve){
-                cout<<"YES"<<endl;
-            }else{
-                cout<<"NO"<<endl;
-            }
-
+        if(trouve){
+            cout<<"YES"<<endl;
         }else{
-             cout<<"YES"<<endl;
+            cout<<"NO"<<endl;
         }
-
     }
 }
