@@ -1,4 +1,4 @@
 # depslib dependency file v1.0
-1719855175 source:c:\users\talel\desktop\codeforces\football\main.cpp
-	<iostream>
+1724281917 source:c:\users\talel\desktop\codeforces\football\main.cpp
+	<bits/stdc++.h>
 

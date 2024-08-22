@@ -1,26 +1,28 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 int main()
 {
-  string ch;
-  cin>>ch;
-  int nb=0;
-  for(int i=0;i<ch.size();i++){
-       if(ch[i]==ch[i+1]){
-            nb++;
-            if(nb>=6){
-                break;
-            }
-       }else{
-            nb=0;
-       }
-  }
-    if(nb==0){
-        cout<<"NO"<<endl;
-    }else{
-        cout<<"YES"<<endl;
-    }
+  int n;
+  cin>>n;
 
+  map<string,int> tab;
+
+  for(int i=0;i<n;i++){
+    string ch;
+    cin>>ch;
+    tab[ch]++;
+  }
+
+  string winner="";
+  int nbr=0;
+
+  for(auto x:tab){
+     if(x.second>nbr){
+        nbr=x.second;
+        winner=x.first;
+     }
+  }
+  cout<<winner;
 }
