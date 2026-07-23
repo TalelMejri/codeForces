@@ -1,0 +1,8 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   vector<vector<int>> matrix(m, vector<int>(n));
+}

@@ -1,0 +1,8 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    vector<vector<int>> matrix(5, vector<int>(5));
+}
